@@ -1,0 +1,16 @@
+- name: ec2 launcher
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: launching ec2
+    ec2:
+      instance_type: t2.micro
+      key_name: dev-ops-uswest
+      image: ami-056ee704806822732
+      region: us-west-1
+      #region: eu-west-2
+      group: default
+      count: 1
+      vpc_subnet_id: subnet-c332c0a5
+      wait: yes
+      assign_public_ip: yes
