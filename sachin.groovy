@@ -1,8 +1,8 @@
-// MyProject-Build.groovy
+// MyProject-sachin.groovy
 
 def gitUrl = "https://github.com/example/project.git"
 
-job("MyProject-Build") {
+job("MyProject-sachin") {
     description "Builds MyProject from master branch."
     parameters {
         stringParam('COMMIT', 'HEAD', 'Commit to build')
