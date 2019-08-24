@@ -1,3 +1,11 @@
-hi this is the test file for upload to on github
-
-this is the aded branch
+job('DSL-Tutorial-1-Test-sachin') {
+    scm {
+        git('git://github.com/quidryan/aws-sdk-test.git')
+    }
+    triggers {
+        scm('H/15 * * * *')
+    }
+    steps {
+        maven('-e clean test')
+    }
+}
