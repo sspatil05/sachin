@@ -6,11 +6,11 @@
     ec2:
       instance_type: t2.micro
       key_name: dev-ops-uswest
-      image: ami-056ee704806822732
+      image: ami-0915bcb5fa77e4892
       region: us-west-1
       #region: eu-west-2
       group: default
       count: 1
-      vpc_subnet_id: subnet-c332c0a5
+      vpc_subnet_id: subnet-ecd65e8a
       wait: yes
       assign_public_ip: yes
