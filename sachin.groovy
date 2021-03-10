@@ -10,13 +10,10 @@ job("MyProject-sachin") {
     scm {
         git {
             remote {
-                url gitUrl.
+                url gitUrl
                 branch "origin/master"
             }
-            extensions {
-                wipeOutWorkspace()
-                localBranch master
-            }
+
         }
     }
     steps {
