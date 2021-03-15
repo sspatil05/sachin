@@ -1,5 +1,5 @@
 branch = "master"
-git_url = "https://github.deere.com/parts/parts-hci-infra"
+git_url = "https://github.com/sspatil05/sachin.git"
 
 freeStyleJob('create-update-ec2-stack-devl') {
     logRotator(numToKeep = 100)
