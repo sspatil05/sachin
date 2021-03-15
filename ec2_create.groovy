@@ -20,29 +20,20 @@ freeStyleJob('create-update-ec2-stack-devl') {
         }
     }
     steps {
-        shell( '''
+        shell( '''#!/opt/rh/rh-python36/root/usr/bin/python
+import boto3
+ec2 = boto3.resource('ec2')
 
+# create a new EC2 instance
+instances = ec2.create_instances(
+     ImageId='ami-0915bcb5fa77e4892',
+     MinCount=1,
+     MaxCount=1,
+     InstanceType='t2.micro',
+	
+     KeyName='test-aws-key'
+ )
 
-
-if [ "$RE_CREATE" = false ]
-then
-   FORCE_DELETE=""
-else
-   FORCE_DELETE=--force_delete
-fi
-
-python --version
-python -m cloud_common.aws_stack_operation \\
---region us-east-1 \\
---role_name $ROLE_NAME \\
---account_number $ACCOUNT_NUMBER \\
---operation $OPERATIONS \\
---arch $ARCH_FILE \\
---var $VAR_FILE \\
---stack_name $STACK_NAME \\
---config_file $CONFIG_FILE \\
---template_url $TEMPLATE_URL \\
---log DEBUG $FORCE_DELETE $USE_EXISTING
         ''')
     }
 }
