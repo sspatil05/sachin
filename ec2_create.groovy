@@ -6,7 +6,7 @@ freeStyleJob('create-update-ec2-stack-devl') {
     parameters {
 
         stringParam("ENVIRONMENT", "devl")
-
+	choiceParam("OPERATIONS", ["Qa13","qa14","perf"])
         choiceParam("OPERATIONS", ["dry_run","deploy","delete"])
         choiceParam("RE_CREATE", ["false","true"])
     }
