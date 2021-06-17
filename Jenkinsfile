@@ -52,7 +52,7 @@ pipeline {
 
         stage('Build Deploy Code') {
             when {
-                branch 'patil'
+                branch 'devlop'
             }
             steps {
                 sh """
