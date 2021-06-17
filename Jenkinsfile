@@ -24,16 +24,7 @@ pipeline {
             }
         }
 
-        stage('Code Checkout') {
-            steps {
-                checkout([
-                    $class: 'GitSCM', 
-                    branches: [[name: '*/main']], 
-                    userRemoteConfigs: [[url: 'https://github.com/sspatil05/sachin.git']]
-                ])
-            }
-        }
-
+ 
         stage(' Unit Testing') {
             steps {
                 sh """
