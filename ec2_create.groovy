@@ -20,16 +20,7 @@ freeStyleJob('create-update-ec2-stack-devl') {
         }
     }
     steps {
-        shell( '''
-
-if [ "$RE_CREATE" = false ]
-then
-   FORCE_DELETE=""
-else
-   FORCE_DELETE=--force_delete
-fi
-
-#!/opt/rh/rh-python36/root/usr/bin/python
+        shell( '''#!/opt/rh/rh-python36/root/usr/bin/python
 import boto3
 ec2 = boto3.resource('ec2')
 # create a new EC2 instance
